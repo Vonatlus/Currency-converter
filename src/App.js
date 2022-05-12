@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { CurrencyConverter } from './components/CurrencyConverter';
 
-const BASE_URL = 'https://api.fastforex.io//fetch-multi?from=UAH&to=EUR,USD,UAH&api_key=8dca1ac5e5-86f2968c05-ra5mi2';
+const BASE_URL = 'https://cdn.cur.su/api/nbu.json';
 
 function App() {
   const [value1, setValue1] = useState();
@@ -16,8 +16,8 @@ function App() {
   useEffect(() => {
     fetch(BASE_URL)
       .then(response => response.json())
-      .then(data => { setResults(data.results) })
-      .catch(error => { console.log(error) });
+      .then(data => { setResults(data.rates) })
+      .catch(error => { document.write(error) });
   }, []);
 
   useEffect(() => {
