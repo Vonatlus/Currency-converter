@@ -1,0 +1,9 @@
+.card-size {
+  display: flex;
+  width: 400px;
+  margin: 10px auto;
+}
+
+.select-position {
+  margin-left: 10px;
+}
